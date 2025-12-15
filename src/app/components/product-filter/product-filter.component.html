@@ -1,0 +1,26 @@
+<div class="card p-3 mb-4 shadow-sm">
+    <h5 class="fw-semibold mb-3">Filtrar productos</h5>
+    <form class="row g-3">
+        <div class="col-md-3">
+            <input type="text" name="name" class="form-control" placeholder="Buscar por nombre"
+                [(ngModel)]="filtros.name" (ngModelChange)="aplicarFiltros()">
+        </div>
+        <div class="col-md-3">
+            <input type="text" name="category" class="form-control" placeholder="Filtrar por categoría"
+                [(ngModel)]="filtros.category" (ngModelChange)="aplicarFiltros()">
+        </div>
+        <div class="col-md-3">
+            <input type="number" name="price" class="form-control" placeholder="Precio máximo" min="0"
+                [(ngModel)]="filtros.price" (ngModelChange)="aplicarFiltros()">
+        </div>
+        <div class="col-md-3 d-flex align-items-center">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="active" id="soloActivos"
+                    [(ngModel)]="filtros.active" (ngModelChange)="aplicarFiltros()">
+                <label class="form-check-label" for="soloActivos">
+                    Solo activos
+                </label>
+            </div>
+        </div>
+    </form>
+</div>
